@@ -197,7 +197,11 @@ if (rightpress) {
     image_angle = image_angle - 5;
 }
 
-
+//parallaxx
+background_vspeed[0] = cos(degtorad(o_ship.image_angle-90))*1;
+background_hspeed[0] = sin(degtorad(o_ship.image_angle-90))*1;
+background_vspeed[1] = cos(degtorad(o_ship.image_angle-90))*1.5
+background_hspeed[1] = sin(degtorad(o_ship.image_angle-90))*1.5;
 
 /*leftpress = keyboard_check(vk_left);
 rightpress = keyboard_check(vk_right);

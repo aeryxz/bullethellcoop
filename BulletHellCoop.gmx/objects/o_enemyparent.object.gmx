@@ -111,7 +111,8 @@ armor = 0;
           <argument>
             <kind>1</kind>
             <string>///when outside room, destroy
-instance_destroy();
+//do i need this?
+//instance_destroy();
 </string>
           </argument>
         </arguments>

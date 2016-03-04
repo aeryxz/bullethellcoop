@@ -26,8 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>///initalie enemy spawner
-alarm[SPAWNER_ALARM] = room_speed*3;
-alarm[POWERUP_ALARM] = room_speed*5;
+
+//for testing without enemies
+debug = false;
+
+
+
+
+if (debug == false) {
+    alarm[SPAWNER_ALARM] = room_speed*3;
+    alarm[POWERUP_ALARM] = room_speed*5;
+}
 </string>
           </argument>
         </arguments>
