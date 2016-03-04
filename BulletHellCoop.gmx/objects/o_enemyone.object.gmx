@@ -86,7 +86,7 @@ alarm[UPDATE_AI] = room_speed / 2;
             <kind>1</kind>
             <string>///set alarm?
 event_inherited();
-
+image_angle=direction;
 </string>
           </argument>
         </arguments>

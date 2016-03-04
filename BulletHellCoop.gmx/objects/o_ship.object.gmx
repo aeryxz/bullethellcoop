@@ -30,7 +30,6 @@ alarm[LASER_ALARM] = 1;
 laser_powerup = false;
 
 //right click boost
-alarm[BOOST_TIMER] = 3;
 blink_ability = true;
 shield_ability = true;
 
@@ -59,9 +58,35 @@ armor = 4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///ability timers
+            <string>///BLINK RESET
 //reset alarm
 blink_ability = true; //this is blink
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///SHIELD ABILITY RESET
+shield_ability = true;
+
+//reset oship sprite
 </string>
           </argument>
         </arguments>
@@ -144,7 +169,7 @@ if (laser_powerup == true) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///move ship using kb
+            <string>///move ship using kb and abilities
 
 leftpress = keyboard_check(vk_left);
 rightpress = keyboard_check(vk_right);
@@ -214,17 +239,32 @@ oldy = mouse_y;
 
 //abilities
 if (keyboard_check(ord("A"))) &amp;&amp; (blink_ability == true) {
+    //show last blink loca
+    instance_create(x,y,o_ship_blink_last_location);
+    o_ship_blink_last_location.image_angle = image_angle;
 
+    
+    
     //blink direction stuff
     var dist = 100;
     x += cos(degtorad(image_angle))*dist;
     y -= sin(degtorad(image_angle))*dist;
+    
     blink_ability = false;
-    alarm[BLINK_UPDATE] = room_speed / 5;
-    alarm[BOOST_TIMER] = room_speed * 5;
+    alarm[BLINK_UPDATE] = room_speed * 5;
 }
 
-if (keyboard_check(ord("Z"))) &amp;&amp; (boost_ability == true) {
+if (keyboard_check(ord("Z"))) &amp;&amp; (shield_ability == true) {
+    //draw shield
+    var inst;
+    inst = instance_create(o_ship.x, o_ship.y, o_ship_shield);
+    with (inst)
+    {
+        image_angle = o_ship.image_angle;
+    }
+    shield_ability = false;
+    alarm[SHIELD_UPDATE] = room_speed * 5;
+}
 
 //check if player hits boundaries
 x = clamp(x, 16,room_width-16);

@@ -16,6 +16,7 @@
   <sprites name="sprites">
     <sprite>sprites\s_ship</sprite>
     <sprite>sprites\s_ship_shield</sprite>
+    <sprite>sprites\s_blink_last_location</sprite>
     <sprite>sprites\s_laser</sprite>
     <sprite>sprites\s_enemyone</sprite>
     <sprite>sprites\s_explosion_center</sprite>
@@ -46,6 +47,8 @@
   </fonts>
   <objects name="objects">
     <object>objects\o_ship</object>
+    <object>objects\o_ship_shield</object>
+    <object>objects\o_ship_blink_last_location</object>
     <object>objects\o_laser</object>
     <object>objects\o_enemylaser</object>
     <object>objects\o_enemyparent</object>
@@ -66,9 +69,12 @@
     <object>objects\o_restart_button</object>
     <object>objects\s_quit_button</object>
     <object>objects\o_screen_flash</object>
+    <object>objects\o_shield_flash</object>
     <object>objects\o_view_controller</object>
     <object>objects\o_flare</object>
     <object>objects\o_particle_creator</object>
+    <object>objects\o_shield_ready</object>
+    <object>objects\o_blink_ready</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_menu</room>

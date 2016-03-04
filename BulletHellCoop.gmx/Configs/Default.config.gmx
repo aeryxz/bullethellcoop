@@ -646,9 +646,9 @@
   </Options>
   <ConfigConstants>
     <constants number="8">
+      <constant name="SHIELD_UPDATE">2</constant>
       <constant name="UPDATE_AI">0</constant>
-      <constant name="BLINK_UPDATE">2</constant>
-      <constant name="BOOST_TIMER">3</constant>
+      <constant name="BLINK_UPDATE">3</constant>
       <constant name="SCREENSHAKE">0</constant>
       <constant name="LASER_POWERUP">1</constant>
       <constant name="POWERUP_ALARM">1</constant>
