@@ -51,6 +51,12 @@ text = "Start";
           <argument>
             <kind>1</kind>
             <string>///start game
+
+
+//creates the global i need
+global.running_time = 0;
+
+
 room_goto(r_space);
 </string>
           </argument>

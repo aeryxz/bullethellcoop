@@ -25,18 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///initalie enemy spawner
+            <string>///initalise enemy spawner and random spot for o_ship
 
 //for testing without enemies
 debug = false;
-
-
-
 
 if (debug == false) {
     alarm[SPAWNER_ALARM] = room_speed*3;
     alarm[POWERUP_ALARM] = room_speed*5;
 }
+
+o_ship.x = random_range(0,room_width);
+o_ship.y = random_range(0,room_height);
+o_ship.image_angle = random_range(0,360);
 </string>
           </argument>
         </arguments>

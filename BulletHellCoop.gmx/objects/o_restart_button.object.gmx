@@ -27,7 +27,33 @@
             <kind>1</kind>
             <string>///create button
 event_inherited();
-text = "Menu";
+text = "CHANGE PLAYERS#LAUNCH WITH#GUNNER (A) + (Z)";
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///restart using gunner
+if (keyboard_check(ord("A")) &amp;&amp; keyboard_check(ord("Z"))) {
+    event_perform(ev_mouse,ev_left_press);
+} 
 </string>
           </argument>
         </arguments>
@@ -51,13 +77,13 @@ text = "Menu";
           <argument>
             <kind>1</kind>
             <string>///do stuff
-//update highscore
+//update highscore and stast
 
-room_goto(r_menu);
-if (score &gt; o_game.highscore) {
-    o_game.highscore = score;
-}
+o_game.highscore += score;
 score = 0;
+global.total_deaths += 1;
+global.session_score = o_game.highscore;
+room_restart();
 
 </string>
           </argument>

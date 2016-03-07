@@ -28,8 +28,6 @@
             <string>///create screenshakerinos and elasped timer
 screenshake=0;
 
-// Save the start time
-global.running_time = 0;
 </string>
           </argument>
         </arguments>
@@ -109,7 +107,9 @@ if (instance_exists(o_ship)) {
             <kind>1</kind>
             <string>///draw the elapsed time
 
-draw_text(floor(room_width/2),400,converted_time);
+draw_text(floor(room_width/2),((room_height/8)-80),converted_time);
+draw_text(floor((room_width/8)-100),((room_height)-40),"brave pilot and gunners dead:# " + string(global.total_deaths));
+draw_text(floor((room_width/1.25)+20),((room_height)-40),"total glory points gained:# " + string(global.session_score+score) );
 </string>
           </argument>
         </arguments>
