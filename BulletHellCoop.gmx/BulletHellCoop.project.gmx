@@ -22,7 +22,7 @@
     <sprite>sprites\s_explosion_center</sprite>
     <sprite>sprites\s_enemytwo</sprite>
     <sprite>sprites\s_enemylaser</sprite>
-    <sprite>sprites\s_score</sprite>
+    <sprite>sprites\s_long_text_ui</sprite>
     <sprite>sprites\s_keybtn_bg</sprite>
     <sprite>sprites\s_armour</sprite>
     <sprite>sprites\s_armourpowerup</sprite>
@@ -41,6 +41,7 @@
     <script>scripts\add_screenshake.gml</script>
     <script>scripts\create_part_type_sprite.gml</script>
     <script>scripts\create_explosion.gml</script>
+    <script>scripts\MtoHMS.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_score</font>
@@ -51,15 +52,15 @@
     <object>objects\o_ship_blink_last_location</object>
     <object>objects\o_laser</object>
     <object>objects\o_enemylaser</object>
+    <object>objects\o_enemyspawner</object>
     <object>objects\o_enemyparent</object>
     <object>objects\o_enemyasteroid</object>
     <object>objects\o_enemyone</object>
     <object>objects\o_enemytwo</object>
-    <object>objects\o_enemyspawner</object>
     <object>objects\o_explosion_center</object>
     <object>objects\o_game</object>
-    <object>objects\o_score</object>
-    <object>objects\o_highscore</object>
+    <object>objects\o_ui_score</object>
+    <object>objects\o_ui_highscore</object>
     <object>objects\o_armour</object>
     <object>objects\o_powerup_parent</object>
     <object>objects\o_armour_powerup</object>
@@ -73,8 +74,8 @@
     <object>objects\o_view_controller</object>
     <object>objects\o_flare</object>
     <object>objects\o_particle_creator</object>
-    <object>objects\o_shield_ready</object>
     <object>objects\o_blink_ready</object>
+    <object>objects\o_shield_ready</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_menu</room>

@@ -184,7 +184,7 @@ if (uppress) {
 }
 else {
     if (speed &gt; 0) {
-            speed -= 0.1;
+            speed -= 0.15;
     }
 }
 
@@ -198,10 +198,10 @@ if (rightpress) {
 }
 
 //parallaxx
-background_vspeed[0] = cos(degtorad(o_ship.image_angle-90))*1;
-background_hspeed[0] = sin(degtorad(o_ship.image_angle-90))*1;
-background_vspeed[1] = cos(degtorad(o_ship.image_angle-90))*1.5
-background_hspeed[1] = sin(degtorad(o_ship.image_angle-90))*1.5;
+background_vspeed[0] = sin(degtorad(o_ship.image_angle))*1;
+background_hspeed[0] = -cos(degtorad(o_ship.image_angle))*1;
+background_vspeed[1] = sin(degtorad(o_ship.image_angle))*2
+background_hspeed[1] = -cos(degtorad(o_ship.image_angle))*2;
 
 /*leftpress = keyboard_check(vk_left);
 rightpress = keyboard_check(vk_right);
@@ -250,9 +250,9 @@ if (keyboard_check(ord("A"))) &amp;&amp; (blink_ability == true) {
     
     
     //blink direction stuff
-    var dist = 100;
-    x += cos(degtorad(image_angle))*dist;
-    y -= sin(degtorad(image_angle))*dist;
+    blink_dist = 100;
+    x += cos(degtorad(image_angle))*blink_dist;
+    y -= sin(degtorad(image_angle))*blink_dist;
     
     blink_ability = false;
     alarm[BLINK_UPDATE] = room_speed * 5;

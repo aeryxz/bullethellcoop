@@ -31,7 +31,7 @@ highscore = 0;
 draw_set_colour(c_white);
 draw_set_font(f_score);
 
-audio_play_sound(a_spacemusic,10, true);
+//audio_play_sound(a_spacemusic,10, true);
 
 //create particle system
 system = part_system_create();
@@ -40,6 +40,45 @@ system = part_system_create();
 pt_smoke = create_part_type_sprite(s_smoke, true, 25,30);
 pt_flare = create_part_type_sprite(s_flare, true, 15,20);
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///update ui for abilities
+if (instance_exists(o_ship)) {
+    if (o_ship.blink_ability == true) {
+        o_blink_ready.image_index = 1;
+    }
+    else {
+        o_blink_ready.image_index = 0;
+    }
+    
+    if (o_ship.shield_ability == true) {
+        o_shield_ready.image_index = 1;
+    }
+    else {
+        o_shield_ready.image_index = 0;
+    }
+}
 
 </string>
           </argument>

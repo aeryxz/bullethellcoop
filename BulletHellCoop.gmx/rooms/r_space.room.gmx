@@ -3,8 +3,8 @@
   <caption></caption>
   <width>1024</width>
   <height>768</height>
-  <vsnap>8</vsnap>
-  <hsnap>9</hsnap>
+  <vsnap>10</vsnap>
+  <hsnap>10</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -52,10 +52,12 @@
   </views>
   <instances>
     <instance objName="o_ship" x="99" y="280" name="inst_629C3942" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_armour" x="585" y="456" name="inst_A5D59ED9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_score" x="576" y="456" name="inst_D21A2134" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_enemyspawner" x="18" y="56" name="inst_AD845AE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="o_view_controller" x="144" y="64" name="inst_66730560" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_armour" x="970" y="10" name="inst_A5D59ED9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_ui_score" x="969" y="10" name="inst_D21A2134" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_enemyspawner" x="225" y="88" name="inst_AD845AE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_view_controller" x="252" y="87" name="inst_66730560" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_shield_ready" x="40" y="26" name="inst_AF9B7E3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="o_blink_ready" x="40" y="10" name="inst_1BB13FF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="45" y="136" w="16" h="16" xo="0" yo="0" id="10000002" name="inst_D2884824" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
