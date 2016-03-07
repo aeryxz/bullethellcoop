@@ -133,19 +133,29 @@ laser_powerup = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///shoot lasers
+            <string>///shoot star lasers
 //instance_create(x+12,y-8,o_laser);
 //instance_create(x-12,y-8,o_laser);
 //reset alarm
-alarm[LASER_ALARM] = room_speed/6;
+alarm[LASER_ALARM] = room_speed/2;
 
 //create powerup laser
 if (laser_powerup == true) {
     var laser;
-    laser = instance_create(x+12, y, o_laser);
+    var angle_laser;
+    var i;
+    for (   i=0; i&lt;=7; i+=1) {
+        angle_laser[i] = i*45;
+        laser = instance_create(x, y, o_laser);
+        laser.direction = angle_laser[i];
+        laser.speed = 4;
+    }
+    /*laser = instance_create(x+12, y, o_laser);
     laser.hspeed = .5;
     laser = instance_create(x-12,y, o_laser);
     laser.hspeed = -.5;
+    */
+       
 }
 </string>
           </argument>
@@ -247,8 +257,7 @@ if (keyboard_check(ord("A"))) &amp;&amp; (blink_ability == true) {
     instance_create(x,y,o_ship_blink_last_location);
     o_ship_blink_last_location.image_angle = image_angle;
 
-    
-    
+
     //blink direction stuff
     blink_dist = 100;
     x += cos(degtorad(image_angle))*blink_dist;
@@ -273,8 +282,6 @@ if (keyboard_check(ord("Z"))) &amp;&amp; (shield_ability == true) {
 //check if player hits boundaries
 x = clamp(x, 16,room_width-16);
 y = clamp(y, 16, room_height-16);
-
-
 
 //die code and show buttons
 if (armor &lt;= 0) {
