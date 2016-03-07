@@ -93,15 +93,15 @@ if (instance_exists(o_ship)) {
     var ALARM_TIME = random_range(room_speed*0.5, room_speed*2);
     
     //increase difficulty
-    if (score &gt;= 100) {
+    if (score &gt;= 25) {
         var enemy = choose(o_enemyone,o_enemyasteroid,o_enemytwo);
         ALARM_TIME = random_range(room_speed*.25, room_speed*1.5);
     }
     
     //increase difficulty
-    if (score &gt;= 200) {
+    if (score &gt;= 50) {
         var enemy = choose(o_enemyone,o_enemyasteroid,o_enemytwo,o_enemytwo);
-        ALARM_TIME = random_range(room_speed*.25, room_speed);
+        ALARM_TIME = random_range(room_speed*.20, room_speed);
     }
     //create enemy
     instance_create(random_range(16,room_width-16),-16, enemy);

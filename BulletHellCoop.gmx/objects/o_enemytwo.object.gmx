@@ -56,7 +56,7 @@ alarm[LASER_ALARM] = 1;
             <kind>1</kind>
             <string>///fire laser
 instance_create(x, y+8, o_enemylaser);
-alarm[LASER_ALARM] = room_speed/1.5;
+alarm[LASER_ALARM] = room_speed/1;
 </string>
           </argument>
         </arguments>
@@ -81,13 +81,31 @@ alarm[LASER_ALARM] = room_speed/1.5;
             <kind>1</kind>
             <string>///bounce enemy back and forth
 event_inherited();
-
-if (x &gt;= room_width - 16) {
-    hspeed = -1;
-}
-if (x &lt; 16) {
-    hspeed = 1;
-}
+image_angle=direction;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///kill myself
+instance_destroy();
 </string>
           </argument>
         </arguments>

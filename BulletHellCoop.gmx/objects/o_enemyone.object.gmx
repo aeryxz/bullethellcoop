@@ -58,6 +58,8 @@ alarm[UPDATE_AI] = room_speed / 5;
           <argument>
             <kind>1</kind>
             <string>///follow the player (updated every few frames to limit difficulty)
+event_inherited();
+
 if (instance_exists(o_ship)) {
     move_towards_point(o_ship.x, o_ship.y, movement_speed);
 }

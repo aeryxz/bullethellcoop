@@ -26,7 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>///initalise laser object
-vspeed = 4;
+var laser_speed = random_range(4,6)
+if (instance_exists(o_ship)) {
+    move_towards_point(o_ship.x, o_ship.y, laser_speed);
+}
 instance_create(x,y,o_flare);
 audio_play_sound(a_enemylaser,4, false);
 </string>

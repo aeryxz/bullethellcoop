@@ -75,6 +75,9 @@ instance_destroy();
             <kind>1</kind>
             <string>///drop the alpha
 if image_alpha &gt; 0 image_alpha -= 0.2;
+if (image_index = 4) {
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
