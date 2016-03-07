@@ -275,17 +275,6 @@ x = clamp(x, 16,room_width-16);
 y = clamp(y, 16, room_height-16);
 
 
-//pick up powerups close enough
-if distance_to_object(o_armour_powerup) &lt; 15
-{
-    event_perform(ev_collision, o_armour_powerup);
-}
-
-if distance_to_object(o_laser_powerup) &lt; 15
-{
-    event_perform(ev_collision, o_laser_powerup);
-}
-
 
 //die code and show buttons
 if (armor &lt;= 0) {
