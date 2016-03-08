@@ -33,11 +33,41 @@ debug = false;
 if (debug == false) {
     alarm[SPAWNER_ALARM] = room_speed*3;
     alarm[POWERUP_ALARM] = room_speed*5;
+    alarm[POWERUP2_ALARM] = room_speed*15;
 }
 
 o_ship.x = random_range(0,room_width);
 o_ship.y = random_range(0,room_height);
 o_ship.image_angle = random_range(0,360);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///add second powerup
+//add another powerup if game is going longer
+if (score &gt;= 50) {
+var powerup2 = choose(o_armour_powerup, o_laser_powerup);
+    instance_create(random_range(16,room_width-16), -16, powerup2);
+}
+alarm[POWERUP_ALARM] = random_range(room_speed*4, room_speed*24);
 </string>
           </argument>
         </arguments>
@@ -65,11 +95,7 @@ var powerup = choose(o_armour_powerup, o_laser_powerup);
 instance_create(random_range(16,room_width-16), -16, powerup);
 alarm[POWERUP_ALARM] = random_range(room_speed*10, room_speed*15);
 
-//add another powerup if game is going longer
-if (score &gt;= 50) {
-var powerup2 = choose(o_armour_powerup, o_laser_powerup);
-    instance_create(random_range(16,room_width-16), -16, powerup2);
-}
+
 </string>
           </argument>
         </arguments>
@@ -99,7 +125,7 @@ if (instance_exists(o_ship)) {
     var ALARM_TIME = random_range(room_speed*0.5, room_speed*2);
     
     //increase difficulty
-    if (score &gt;= 25) {
+    if (score &gt;= 20) {
         var enemy = choose(o_enemyone,o_enemyasteroid,o_enemytwo);
         ALARM_TIME = random_range(room_speed*.25, room_speed*1.5);
     }
@@ -115,17 +141,17 @@ if (instance_exists(o_ship)) {
     alarm[SPAWNER_ALARM] = random_range(room_speed*0.5, room_speed*2);
     
     //add more mobs as it gets higher
-    if (score &gt;= 50) {
+    if (score &gt;= 40) {
         var enemy2 = choose(o_enemyone,o_enemyasteroid,o_enemytwo,o_enemytwo);
         instance_create(random_range(16,room_width-16),-16, enemy2);
     }    
     
-    if (score &gt;= 70) {
+    if (score &gt;= 60) {
         var enemy3 = choose(o_enemyone,o_enemyasteroid,o_enemytwo,o_enemytwo);
         instance_create(random_range(16,room_width-16),-16, enemy3);
     }    
     
-    if (score &gt;= 90) {
+    if (score &gt;= 80) {
         var enemy4 = choose(o_enemyone,o_enemyasteroid,o_enemytwo,o_enemytwo);
         instance_create(random_range(16,room_width-16),-16, enemy4);
     }    

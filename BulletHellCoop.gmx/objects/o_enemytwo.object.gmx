@@ -57,7 +57,7 @@ alarm[LASER_ALARM] = 1;
             <kind>1</kind>
             <string>///fire laser
 instance_create(x, y+8, o_enemylaser);
-alarm[LASER_ALARM] = room_speed/1;
+alarm[LASER_ALARM] = room_speed/1.5;
 </string>
           </argument>
         </arguments>
@@ -80,7 +80,7 @@ alarm[LASER_ALARM] = room_speed/1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///bounce enemy back and forth
+            <string>///image angle
 event_inherited();
 image_angle=direction;
 </string>

@@ -151,13 +151,8 @@ if (laser_powerup == true) {
         angle_laser[i] = i*45;
         laser = instance_create(x, y, o_laser);
         laser.direction = angle_laser[i];
-        laser.speed = 4;
+        laser.speed = 6;
     }
-    /*laser = instance_create(x+12, y, o_laser);
-    laser.hspeed = .5;
-    laser = instance_create(x-12,y, o_laser);
-    laser.hspeed = -.5;
-    */
        
 }
 </string>
@@ -398,7 +393,7 @@ if (instance_exists(o_enemyone)) {
          //create the laser and aim it towards the enemy
          tempLaser = instance_create(x,y,o_laser);
          with (tempLaser) {
-            move_towards_point(o_ship.tempX, o_ship.tempY, 7);
+            move_towards_point(o_ship.tempX, o_ship.tempY, 8);
          }
        }
     }
@@ -414,7 +409,7 @@ if (instance_exists(o_enemytwo)) {
          //create the laser and aim it towards the enemy
          tempLaser = instance_create(x,y,o_laser);
          with (tempLaser) {
-            move_towards_point(o_ship.tempX, o_ship.tempY, 7);
+            move_towards_point(o_ship.tempX, o_ship.tempY, 8);
          }
        }
     }
