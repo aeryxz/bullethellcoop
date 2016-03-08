@@ -6,12 +6,17 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\a_hit</sound>
+    <sound>sound\sound12_shield up</sound>
     <sound>sound\a_laser</sound>
+    <sound>sound\a_shieldup</sound>
+    <sound>sound\a_shielddown</sound>
     <sound>sound\a_powerup</sound>
+    <sound>sound\a_ability_ready</sound>
     <sound>sound\a_shiphit</sound>
-    <sound>sound\a_spacemusic</sound>
     <sound>sound\a_enemylaser</sound>
     <sound>sound\a_explode</sound>
+    <sound>sound\a_spacemusic</sound>
+    <sound>sound\a_blink</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_ship</sprite>
@@ -45,6 +50,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_score</font>
+    <font>fonts\f_target</font>
   </fonts>
   <objects name="objects">
     <object>objects\o_ship</object>

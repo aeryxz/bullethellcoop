@@ -36,6 +36,8 @@ shield_ability = true;
 //set player hp
 armor = 4;
 
+gunnerShotKey = "A";
+
 </string>
           </argument>
         </arguments>
@@ -60,6 +62,7 @@ armor = 4;
             <kind>1</kind>
             <string>///BLINK RESET
 //reset alarm
+audio_play_sound(a_ability_ready, 5, false);
 blink_ability = true; //this is blink
 </string>
           </argument>
@@ -85,7 +88,7 @@ blink_ability = true; //this is blink
             <kind>1</kind>
             <string>///SHIELD ABILITY RESET
 shield_ability = true;
-
+audio_play_sound(a_ability_ready, 5, false);
 //reset oship sprite
 </string>
           </argument>
@@ -256,7 +259,7 @@ if (keyboard_check(ord("A"))) &amp;&amp; (blink_ability == true) {
     //show last blink loca
     instance_create(x,y,o_ship_blink_last_location);
     o_ship_blink_last_location.image_angle = image_angle;
-
+    audio_play_sound(a_blink, 5, false);
 
     //blink direction stuff
     blink_dist = 100;
@@ -268,6 +271,8 @@ if (keyboard_check(ord("A"))) &amp;&amp; (blink_ability == true) {
 }
 
 if (keyboard_check(ord("Z"))) &amp;&amp; (shield_ability == true) {
+   audio_play_sound(a_shieldup, 9, false);
+
     //draw shield
     var inst;
     inst = instance_create(o_ship.x, o_ship.y, o_ship_shield);
@@ -278,6 +283,7 @@ if (keyboard_check(ord("Z"))) &amp;&amp; (shield_ability == true) {
     shield_ability = false;
     alarm[SHIELD_UPDATE] = room_speed * 5;
 }
+
 
 //check if player hits boundaries
 x = clamp(x, 16,room_width-16);
@@ -291,6 +297,8 @@ if (armor &lt;= 0) {
     instance_create(room_width/2, room_height-100, o_gobackmenu_btn);
    
 }
+
+
 
 </string>
           </argument>
@@ -353,6 +361,66 @@ with (other) {
 }
 
 audio_play_sound(a_powerup,4, false);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///shooting towards enemy
+
+gunnerPressKey = chr(keyboard_lastkey);
+//check objects around me, then compare it to gunner shot
+
+if (instance_exists(o_enemyone)) {
+    var i;
+    for (i = 0; i &lt; instance_number(o_enemyone); i += 1) {
+       tempEnemyOne = instance_find(o_enemyone,i);
+       tempX = tempEnemyOne.x;
+       tempY = tempEnemyOne.y;
+       if (tempEnemyOne.gunnerKey == gunnerPressKey) {
+         //create the laser and aim it towards the enemy
+         tempLaser = instance_create(x,y,o_laser);
+         with (tempLaser) {
+            move_towards_point(o_ship.tempX, o_ship.tempY, 7);
+         }
+       }
+    }
+}
+
+if (instance_exists(o_enemytwo)) {
+    var i;
+    for (i = 0; i &lt; instance_number(o_enemytwo); i += 1) {
+       tempEnemyOne = instance_find(o_enemytwo,i);
+       tempX = tempEnemyOne.x;
+       tempY = tempEnemyOne.y;
+       if (tempEnemyOne.gunnerKey == gunnerPressKey) {
+         //create the laser and aim it towards the enemy
+         tempLaser = instance_create(x,y,o_laser);
+         with (tempLaser) {
+            move_towards_point(o_ship.tempX, o_ship.tempY, 7);
+         }
+       }
+    }
+}
+
+
 </string>
           </argument>
         </arguments>

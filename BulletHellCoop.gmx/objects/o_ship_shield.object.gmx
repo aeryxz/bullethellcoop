@@ -52,6 +52,7 @@ alarm[0] = shield_lifetime;
           <argument>
             <kind>1</kind>
             <string>///drop shield
+audio_play_sound(a_shielddown, 9, false);
 instance_destroy();
 </string>
           </argument>
