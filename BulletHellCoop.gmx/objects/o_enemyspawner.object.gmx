@@ -103,6 +103,13 @@ if (instance_exists(o_ship)) {
         var enemy = choose(o_enemyone,o_enemyasteroid,o_enemytwo,o_enemytwo);
         ALARM_TIME = random_range(room_speed*.20, room_speed);
     }
+    
+    //increase difficulty
+    if (score &gt;= 75) {
+        var enemy = choose(o_enemyone,o_enemyasteroid,o_enemytwo,o_enemytwo);
+        ALARM_TIME = random_range(room_speed*.10, room_speed);
+    }
+    
     //create enemy
     instance_create(random_range(16,room_width-16),-16, enemy);
     alarm[SPAWNER_ALARM] = random_range(room_speed*0.5, room_speed*2);

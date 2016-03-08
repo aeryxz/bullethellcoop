@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///assign gunner key
+            <string>///create gunnerkey for targetting
 gunnerKey = choose("Q","W","E","R","T","Y","U","I","O","P","S","D","F","G","H","J","K","L","X","C","V","B","N","M");
 </string>
           </argument>
