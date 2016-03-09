@@ -110,6 +110,11 @@ if (instance_exists(o_ship)) {
 draw_text(floor(room_width/2),((room_height/8)-80),converted_time);
 draw_text(floor((room_width/8)-100),((room_height)-40),"brave pilot and gunners dead:# " + string(global.total_deaths));
 draw_text(floor((room_width/1.25)+20),((room_height)-40),"total glory points gained:# " + string(global.session_score+score) );
+
+///draw instructions tutorials
+
+draw_text(floor(room_width/2-200),((room_height)-80),"Driver: Left,Up,Down = Move");
+draw_text(floor(room_width/2),((room_height)-80),"Gunner: A = Blink, Z = Shield, #B to Y = Shoot at enemy with corresponding letter");
 </string>
           </argument>
         </arguments>

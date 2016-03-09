@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///create gunnerkey for targetting
-gunnerKey = choose("Q","W","E","R","T","Y","U","I","O","P","S","D","F","G","H","J","K","L","X","C","V","B","N","M");
+
+gunnerKey = choose(choose("Q","W","E","R","T","Y","U","I","O","P","S","D"),choose("F","G","H","J","K","L","X","C","V","B","N","M"));
 </string>
           </argument>
         </arguments>
@@ -49,8 +50,7 @@ gunnerKey = choose("Q","W","E","R","T","Y","U","I","O","P","S","D","F","G","H","
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-//die code
+            <string>///die code
 if (armor &lt;= 0) {
     create_explosion(x,y);
     instance_destroy();
